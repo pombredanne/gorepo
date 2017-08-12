@@ -1,0 +1,3 @@
+package: gorepo
+import:
+- package: github.com/cavaliercoder/go-rpm
