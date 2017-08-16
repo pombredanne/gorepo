@@ -4,9 +4,13 @@ package main
 import (
 	"fmt"
 
-	//	rpm "github.com/cavaliercoder/go-rpm"
+	rpm "github.com/cavaliercoder/go-rpm"
 )
 
 func main() {
-	fmt.Println("Hello World!")
+	p, err := rpm.OpenPackageFile("../testdata/python-colorama-0.3.2-3.el7.noarch.rpm")
+	if err != nil {
+		fmt.Errorf("error reading %s: %v\n", err)
+	}
+	fmt.Printf("%v", (*p).Epoch())
 }
